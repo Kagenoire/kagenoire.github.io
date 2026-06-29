@@ -247,24 +247,6 @@
     box-shadow: 0 0 0 1px var(--border2), 0 8px 24px rgba(0,0,0,.4);
   }
 
-  .card-img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    object-position: top;
-    display: block;
-    background: #111;
-    max-height: 180px;
-  }
-
-  .card-img.logo-img {
-    aspect-ratio: unset;
-    height: 140px;
-    object-fit: contain;
-    padding: 24px;
-    background: #0b0f14;
-  }
-
   .card-body {
     padding: 16px 18px;
     flex: 1;
@@ -330,32 +312,6 @@
 
   .android { background: rgba(57,208,182,.1); color: var(--accent2); border: 1px solid rgba(57,208,182,.2); }
   .windows { background: rgba(249,115,22,.1); color: var(--accent); border: 1px solid rgba(249,115,22,.2); }
-
-  /* DIGITECH MOCKUP */
-  .digitech-mockup {
-    height: 140px;
-    background: #0b0f14;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 14px 16px;
-    gap: 7px;
-  }
-
-  .notif-card {
-    background: rgba(255,255,255,.05);
-    border: 1px solid rgba(255,255,255,.07);
-    border-radius: 7px;
-    padding: 8px 11px;
-    width: 100%;
-  }
-
-  .notif-title { font-size: 10px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
-  .notif-sub { font-size: 9px; color: var(--muted); }
-
-  .notif-card.alarm { background: rgba(255,200,0,.07); border-color: rgba(255,200,0,.18); }
-  .notif-card.alarm .notif-title { color: #ffd600; }
 
   /* WA FAB */
   .wa-fab {
@@ -477,16 +433,6 @@
   <div class="projects">
 
     <div class="card">
-      <div class="digitech-mockup">
-        <div class="notif-card alarm">
-          <div class="notif-title">Deadline H-3: Pemrograman Web</div>
-          <div class="notif-sub">Kumpulkan sebelum 23:59 malam ini</div>
-        </div>
-        <div class="notif-card">
-          <div class="notif-title">Presensi dibuka - Basis Data</div>
-          <div class="notif-sub">Segera absen sebelum ditutup</div>
-        </div>
-      </div>
       <div class="card-body">
         <div class="platform android">Android</div>
         <div class="card-header">
@@ -507,7 +453,6 @@
     </div>
 
     <div class="card">
-      <img src="img/omnibiz.png" alt="OmniBiz" class="card-img">
       <div class="card-body">
         <div class="platform android">Android</div>
         <div class="card-header">
@@ -528,13 +473,12 @@
     </div>
 
     <div class="card">
-      <img src="img/fajar.png" alt="Fajar" class="card-img" style="max-height:180px; object-position: top;">
       <div class="card-body">
         <div class="platform android">Android</div>
         <div class="card-header">
           <h3>Fajar</h3>
           <div class="card-links">
-            <a href="https://github.com/Kagenoire" target="_blank">repo</a>
+            <a href="https://github.com/Kagenoire/fajar" target="_blank">repo</a>
           </div>
         </div>
         <p>App self-discipline personal. Pantau kebiasaan harian: minum air, tidur tepat waktu, tahan jajan, konten bersih. Sistem XP dan level karakter.</p>
@@ -548,13 +492,12 @@
     </div>
 
     <div class="card">
-      <img src="img/cyin.png" alt="CYIN" class="card-img logo-img">
       <div class="card-body">
         <div class="platform windows">Windows</div>
         <div class="card-header">
           <h3>CYIN</h3>
           <div class="card-links">
-            <a href="https://github.com/Kagenoire" target="_blank">repo</a>
+            <a href="https://github.com/Kagenoire/cyin" target="_blank">repo</a>
           </div>
         </div>
         <p>Desktop AI workspace untuk Windows. GUI custom untuk Claude CLI: file tree, chat streaming, dan preview browser built-in.</p>
@@ -563,6 +506,25 @@
           <span class="tag-item">Riverpod</span>
           <span class="tag-item">WebView2</span>
           <span class="tag-item">Stream JSON</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <div class="platform android">Android</div>
+        <div class="card-header">
+          <h3>My Daily Track</h3>
+          <div class="card-links">
+            <a href="https://github.com/Kagenoire/my-daily-track" target="_blank">repo</a>
+          </div>
+        </div>
+        <p>Aplikasi pelacak aktivitas dan kebiasaan harian. Catat progress tiap hari, visualisasi konsistensi, dan bangun rutinitas yang bertahan.</p>
+        <div class="tags">
+          <span class="tag-item">Flutter</span>
+          <span class="tag-item">SQLite</span>
+          <span class="tag-item">fl_chart</span>
+          <span class="tag-item">Local Notifications</span>
         </div>
       </div>
     </div>
