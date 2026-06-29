@@ -204,6 +204,105 @@
   .price-btn-filled { background: var(--grad); color: white; }
   .price-btn-filled:hover { opacity: .85; }
 
+  /* STUDENT PRICING */
+  .student-pricing {
+    margin-top: 28px;
+    background: rgba(67,232,180,.04);
+    border: 1px solid rgba(67,232,180,.2);
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .student-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent3);
+    margin-bottom: 20px;
+  }
+
+  .student-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent3);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .student-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .student-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -.4px;
+    margin-bottom: 8px;
+  }
+
+  .student-info p {
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 480px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .student-feats {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+
+  .student-feats li {
+    font-size: 13px;
+    color: var(--soft);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .student-cta { flex-shrink: 0; text-align: center; }
+
+  .student-price-num {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: var(--accent3);
+    margin-bottom: 4px;
+  }
+
+  .student-price-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    max-width: 160px;
+    line-height: 1.5;
+  }
+
+  .btn-student {
+    display: block;
+    text-decoration: none;
+    padding: 13px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid var(--accent3);
+    color: var(--accent3);
+    white-space: nowrap;
+    transition: background .2s;
+  }
+
+  .btn-student:hover { background: rgba(67,232,180,.08); }
+
   /* FAQ */
   .faq-list { display: flex; flex-direction: column; gap: 2px; }
   .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color .2s; }
@@ -286,6 +385,13 @@
     .pricing-grid { grid-template-columns: 1fr; gap: 12px; }
     .price-card { padding: 28px 24px; }
     .price-amount { font-size: 32px; }
+
+    /* STUDENT PRICING */
+    .student-pricing { padding: 24px 20px; }
+    .student-inner { flex-direction: column; gap: 20px; }
+    .student-cta { width: 100%; }
+    .student-price-note { max-width: 100%; }
+    .btn-student { text-align: center; }
 
     /* FAQ */
     .faq-q { font-size: 14px; padding: 18px 20px; }
@@ -484,6 +590,28 @@
         <li><span class="check">✓</span> Garansi bug 14 hari</li>
       </ul>
       <a href="#kontak" class="price-btn price-btn-ghost">Konsultasi Dulu</a>
+    </div>
+  </div>
+
+  <div class="student-pricing">
+    <div class="student-label"><span class="student-dot"></span> Khusus Mahasiswa</div>
+    <div class="student-inner">
+      <div class="student-info">
+        <h3>Paket Tugas & Portofolio Kuliah</h3>
+        <p>Butuh landing page untuk tugas kuliah, profil UKM, atau portofolio jurusan? Ada harga khusus buat kamu yang masih kuliah.</p>
+        <ul class="student-feats">
+          <li><span class="check">✓</span> Landing page 1 halaman</li>
+          <li><span class="check">✓</span> Template pilihan + warna custom</li>
+          <li><span class="check">✓</span> Revisi 1x</li>
+          <li><span class="check">✓</span> Selesai 1-2 hari kerja</li>
+          <li><span class="check">✓</span> Source code diserahkan</li>
+        </ul>
+      </div>
+      <div class="student-cta">
+        <div class="student-price-num">Rp 200rb</div>
+        <div class="student-price-note">Tunjukkan KTM aktif saat order</div>
+        <a href="#kontak" class="btn-student">Pesan Sekarang</a>
+      </div>
     </div>
   </div>
 </section>
