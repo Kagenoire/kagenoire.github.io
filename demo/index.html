@@ -148,6 +148,34 @@
   .cta-urgency { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 36px; position: relative; }
   .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
 
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-badge { animation: fadeUp .45s ease forwards; }
+  .hero h1 { animation: fadeUp .55s .1s ease both; }
+  .hero-sub { animation: fadeUp .55s .2s ease both; }
+  .hero-proof { animation: fadeUp .55s .25s ease both; }
+  .hero-btns { animation: fadeUp .55s .3s ease both; }
+
+  .stat, .service-card, .process-step, .price-card, .faq-item,
+  .section-tag, .section-title, .section-sub,
+  .student-pricing, .cta {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .45s ease, transform .45s ease;
+  }
+  .anim-visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-badge, .hero h1, .hero-sub, .hero-proof, .hero-btns { animation: none; opacity: 1; transform: none; }
+    .stat, .service-card, .process-step, .price-card, .faq-item,
+    .section-tag, .section-title, .section-sub, .student-pricing, .cta {
+      opacity: 1; transform: none; transition: none;
+    }
+  }
+
   /* WA FAB */
   .wa-fab { position: fixed; bottom: 20px; right: 16px; background: #25d366; color: #fff; border-radius: 50px; padding: 12px 18px 12px 14px; display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 20px rgba(37,211,102,.45); z-index: 998; transition: transform .2s, box-shadow .2s; }
   .wa-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,211,102,.6); }
@@ -485,6 +513,15 @@
       document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     });
+  });
+  const _sp = document.querySelectorAll('.stats, .services-grid, .process-grid, .pricing-grid, .faq-list');
+  _sp.forEach(p => {
+    const o = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { [...e.target.children].forEach((c,i) => setTimeout(() => c.classList.add('anim-visible'), i*80)); o.unobserve(e.target); } }); }, {threshold:.08});
+    o.observe(p);
+  });
+  document.querySelectorAll('.section-tag, .section-title, .section-sub, .student-pricing, .cta').forEach(el => {
+    const o = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('anim-visible'); o.unobserve(e.target); } }); }, {threshold:.1});
+    o.observe(el);
   });
 </script>
 </body>
