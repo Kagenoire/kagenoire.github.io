@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kagenoire | Jasa Digital Kreatif</title>
+<title>Kagenoire | Jasa Website Profesional</title>
 <style>
   :root {
     --bg: #07070a;
@@ -13,93 +13,91 @@
     --text: #ececec;
     --muted: #5a5a72;
     --soft: #9898b0;
-    --accent: #6c63ff;
-    --accent2: #ff6584;
+    --accent: #f97316;
+    --accent2: #06b6d4;
     --accent3: #43e8b4;
-    --grad: linear-gradient(135deg, #6c63ff, #ff6584);
+    --grad: linear-gradient(135deg, #f97316, #dc2626);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
-  /* NOISE OVERLAY */
+  /* NOISE */
   body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: .4; }
 
   /* NAV */
-  nav { position: sticky; top: 0; z-index: 100; padding: 20px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(7,7,10,.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+  nav { position: sticky; top: 0; z-index: 100; padding: 18px 60px; display: flex; justify-content: space-between; align-items: center; background: rgba(7,7,10,.88); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
   .nav-logo { font-weight: 800; font-size: 18px; letter-spacing: -.5px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; transition: color .2s; }
   .nav-links a:hover { color: var(--text); }
-  .nav-cta { background: var(--accent); color: white !important; padding: 10px 22px; border-radius: 10px; font-weight: 600 !important; font-size: 13px !important; transition: opacity .2s !important; }
-  .nav-cta:hover { opacity: .8; color: white !important; }
+  .nav-cta { background: var(--accent); color: white !important; padding: 10px 22px; border-radius: 10px; font-weight: 700 !important; font-size: 13px !important; transition: opacity .2s !important; }
+  .nav-cta:hover { opacity: .85; }
 
   /* HERO */
-  .hero { position: relative; min-height: 92vh; display: flex; align-items: center; padding: 0 60px; overflow: hidden; }
+  .hero { position: relative; min-height: 90vh; display: flex; align-items: center; padding: 0 60px; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; pointer-events: none; }
-  .blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: .12; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: .1; }
   .blob-1 { width: 600px; height: 600px; background: var(--accent); top: -200px; right: -100px; animation: drift 8s ease-in-out infinite; }
   .blob-2 { width: 400px; height: 400px; background: var(--accent2); bottom: -100px; left: -100px; animation: drift 10s ease-in-out infinite reverse; }
-  @keyframes drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(30px, -30px); } }
+  @keyframes drift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(30px,-30px); } }
 
-  .hero-content { position: relative; max-width: 760px; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); background: var(--surface); padding: 6px 16px; border-radius: 100px; font-size: 12px; color: var(--soft); margin-bottom: 32px; }
+  .hero-content { position: relative; max-width: 780px; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--border); background: var(--surface); padding: 6px 16px; border-radius: 100px; font-size: 12px; color: var(--soft); margin-bottom: 28px; }
   .hero-badge-dot { width: 6px; height: 6px; background: var(--accent3); border-radius: 50%; animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .3; } }
-  .hero h1 { font-size: clamp(42px, 6vw, 76px); font-weight: 900; line-height: 1.05; letter-spacing: -3px; margin-bottom: 24px; }
+
+  .hero h1 { font-size: clamp(38px, 6vw, 72px); font-weight: 900; line-height: 1.05; letter-spacing: -2.5px; margin-bottom: 20px; }
   .hero h1 .grad { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .hero p { font-size: 18px; color: var(--soft); max-width: 520px; margin-bottom: 44px; line-height: 1.75; }
-  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn-primary { background: var(--grad); color: white; text-decoration: none; padding: 15px 32px; border-radius: 12px; font-weight: 700; font-size: 15px; transition: opacity .2s, transform .2s; display: inline-block; }
-  .btn-primary:hover { opacity: .85; transform: translateY(-1px); }
-  .btn-ghost { border: 1px solid var(--border); color: var(--text); text-decoration: none; padding: 15px 32px; border-radius: 12px; font-weight: 600; font-size: 15px; transition: border-color .2s, background .2s; display: inline-block; }
+
+  .hero-sub { font-size: 17px; color: var(--soft); max-width: 520px; margin-bottom: 16px; line-height: 1.75; }
+  .hero-proof { display: flex; gap: 20px; align-items: center; margin-bottom: 36px; flex-wrap: wrap; }
+  .hero-proof-item { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .hero-proof-item .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent3); flex-shrink: 0; }
+
+  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-wa { background: #25d366; color: white; text-decoration: none; padding: 15px 28px; border-radius: 12px; font-weight: 700; font-size: 15px; transition: opacity .2s, transform .2s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-wa:hover { opacity: .88; transform: translateY(-1px); }
+  .btn-wa svg { flex-shrink: 0; }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); text-decoration: none; padding: 15px 28px; border-radius: 12px; font-weight: 600; font-size: 15px; transition: border-color .2s, background .2s; display: inline-block; }
   .btn-ghost:hover { border-color: #333; background: var(--surface); }
 
   /* STATS */
   .stats { display: flex; gap: 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .stat { flex: 1; padding: 36px 60px; border-right: 1px solid var(--border); }
+  .stat { flex: 1; padding: 32px 60px; border-right: 1px solid var(--border); }
   .stat:last-child { border-right: none; }
-  .stat-num { font-size: 40px; font-weight: 900; letter-spacing: -2px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .stat-num { font-size: 38px; font-weight: 900; letter-spacing: -2px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .stat-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
   /* SECTION */
   .section { max-width: 1100px; margin: 0 auto; padding: 100px 60px; }
   .section-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 3px; color: var(--accent); font-weight: 700; margin-bottom: 12px; }
-  .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; }
-  .section-sub { font-size: 16px; color: var(--soft); max-width: 500px; line-height: 1.7; margin-bottom: 64px; }
+  .section-title { font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -1.5px; margin-bottom: 14px; }
+  .section-sub { font-size: 16px; color: var(--soft); max-width: 500px; line-height: 1.7; margin-bottom: 60px; }
 
   /* SERVICES */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .service-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; transition: border-color .2s, transform .2s; position: relative; overflow: hidden; }
-  .service-card::before { content: ''; position: absolute; inset: 0; background: var(--grad); opacity: 0; transition: opacity .3s; }
-  .service-card:hover { border-color: #2e2e40; transform: translateY(-4px); }
-  .service-card:hover::before { opacity: .03; }
-  .service-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800; letter-spacing: 1px; margin-bottom: 20px; position: relative; color: var(--soft); }
-  .icon-purple { background: rgba(108,99,255,.15); }
-  .icon-pink { background: rgba(255,101,132,.15); }
-  .icon-green { background: rgba(67,232,180,.15); }
-  .icon-orange { background: rgba(255,165,0,.15); }
-  .icon-blue { background: rgba(56,189,248,.15); }
-  .icon-red { background: rgba(248,113,113,.15); }
-  .service-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.3px; position: relative; }
-  .service-card p { font-size: 13px; color: var(--muted); line-height: 1.7; position: relative; }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .service-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; transition: border-color .2s, transform .2s; }
+  .service-card:hover { border-color: #2e2e40; transform: translateY(-3px); }
+  .service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; letter-spacing: -.3px; }
+  .service-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
   /* PROCESS */
-  .process-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .process-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .process-step { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 36px 32px; transition: border-color .2s, transform .2s; }
   .process-step:hover { border-color: #2e2e40; transform: translateY(-3px); }
-  .step-num { font-size: 48px; font-weight: 900; letter-spacing: -3px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; line-height: 1; opacity: .6; }
-  .process-step h3 { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 12px; }
+  .step-num { font-size: 44px; font-weight: 900; letter-spacing: -3px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 14px; line-height: 1; opacity: .6; }
+  .process-step h3 { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 10px; }
   .process-step p { font-size: 14px; color: var(--muted); line-height: 1.75; }
 
   /* PORTFOLIO */
-  .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .portfolio-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden; transition: transform .2s, border-color .2s; }
   .portfolio-card:hover { transform: translateY(-4px); border-color: #2e2e40; }
   .portfolio-mockup { height: 240px; position: relative; overflow: hidden; }
 
-  /* MOCKUP: Dapur Nusantara (restaurant) */
+  /* MOCKUP: Dapur Nusantara */
   .mock-resto { background: #1a0f00; }
   .mock-resto .m-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: rgba(0,0,0,.6); border-bottom: 1px solid rgba(255,200,100,.1); }
   .mock-resto .m-logo { font-size: 9px; font-weight: 800; color: #e8a838; letter-spacing: 1px; }
@@ -117,7 +115,7 @@
   .mock-resto .m-card-title { font-size: 7px; font-weight: 700; color: rgba(255,255,255,.8); margin-bottom: 2px; }
   .mock-resto .m-card-price { font-size: 6px; color: #e8a838; }
 
-  /* MOCKUP: Batik Hartono (shop) */
+  /* MOCKUP: Batik Hartono */
   .mock-shop { background: #faf7f2; }
   .mock-shop .m-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fff; border-bottom: 1px solid #e8e0d4; }
   .mock-shop .m-logo { font-size: 9px; font-weight: 800; color: #5c3d1e; letter-spacing: .5px; }
@@ -138,7 +136,7 @@
   .mock-shop .m-item-name { font-size: 6px; font-weight: 700; color: #3d2810; margin-bottom: 1px; }
   .mock-shop .m-item-price { font-size: 6px; color: #8b6240; }
 
-  /* MOCKUP: Klinik Sehat Prima (clinic) */
+  /* MOCKUP: Klinik Sehat Prima */
   .mock-klinik { background: #f0f4ff; }
   .mock-klinik .m-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fff; border-bottom: 1px solid #dde5f5; }
   .mock-klinik .m-logo { font-size: 8px; font-weight: 800; color: #1e40af; }
@@ -158,264 +156,160 @@
   .mock-klinik .m-stat-num { font-size: 10px; font-weight: 900; color: #1e40af; }
   .mock-klinik .m-stat-label { font-size: 5px; color: #94a3b8; }
 
-  /* MOCKUP: EduPath Academy (education) */
-  .mock-edu { background: #0a0a14; }
+  /* MOCKUP: EduPath Academy */
+  .mock-edu { background: #060912; }
   .mock-edu .m-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.06); }
   .mock-edu .m-logo { font-size: 9px; font-weight: 800; color: #fff; }
-  .mock-edu .m-logo span { color: #818cf8; }
-  .mock-edu .m-nav-btn { font-size: 6px; font-weight: 700; background: #4f46e5; color: #fff; padding: 3px 8px; border-radius: 3px; }
+  .mock-edu .m-logo span { color: #38bdf8; }
+  .mock-edu .m-nav-btn { font-size: 6px; font-weight: 700; background: #0369a1; color: #fff; padding: 3px 8px; border-radius: 3px; }
   .mock-edu .m-hero { padding: 14px 14px 10px; text-align: center; }
-  .mock-edu .m-badge { display: inline-block; border: 1px solid rgba(129,140,248,.3); background: rgba(79,70,229,.1); color: #818cf8; font-size: 6px; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-bottom: 7px; letter-spacing: 1px; text-transform: uppercase; }
+  .mock-edu .m-badge { display: inline-block; border: 1px solid rgba(56,189,248,.3); background: rgba(3,105,161,.15); color: #38bdf8; font-size: 6px; font-weight: 700; padding: 2px 8px; border-radius: 20px; margin-bottom: 7px; letter-spacing: 1px; text-transform: uppercase; }
   .mock-edu .m-h { font-size: 13px; font-weight: 900; color: #fff; line-height: 1.2; letter-spacing: -.5px; margin-bottom: 5px; }
-  .mock-edu .m-h span { color: #818cf8; }
+  .mock-edu .m-h span { color: #38bdf8; }
   .mock-edu .m-sub { font-size: 6px; color: rgba(255,255,255,.4); margin-bottom: 10px; }
   .mock-edu .m-courses { display: flex; gap: 5px; padding: 0 14px; }
   .mock-edu .m-course { flex: 1; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.07); border-radius: 6px; overflow: hidden; }
   .mock-edu .m-course-top { height: 28px; }
-  .mock-edu .m-course-top.e1 { background: linear-gradient(135deg,#4f46e5,#7c3aed); }
-  .mock-edu .m-course-top.e2 { background: linear-gradient(135deg,#0891b2,#4f46e5); }
-  .mock-edu .m-course-top.e3 { background: linear-gradient(135deg,#7c3aed,#db2777); }
+  .mock-edu .m-course-top.e1 { background: linear-gradient(135deg,#0369a1,#0891b2); }
+  .mock-edu .m-course-top.e2 { background: linear-gradient(135deg,#0891b2,#0e7490); }
+  .mock-edu .m-course-top.e3 { background: linear-gradient(135deg,#1d4ed8,#0369a1); }
   .mock-edu .m-course-body { padding: 5px; }
   .mock-edu .m-course-title { font-size: 6px; font-weight: 700; color: rgba(255,255,255,.8); margin-bottom: 2px; }
   .mock-edu .m-course-meta { font-size: 5px; color: rgba(255,255,255,.3); }
+
   .portfolio-info { padding: 24px; }
   .portfolio-tag { display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; }
-  .tag-web { background: rgba(108,99,255,.15); color: var(--accent); border: 1px solid rgba(108,99,255,.2); }
-  .tag-ecom { background: rgba(67,232,180,.15); color: var(--accent3); border: 1px solid rgba(67,232,180,.2); }
-  .tag-landing { background: rgba(255,101,132,.15); color: var(--accent2); border: 1px solid rgba(255,101,132,.2); }
+  .tag-web { background: rgba(249,115,22,.12); color: var(--accent); border: 1px solid rgba(249,115,22,.2); }
+  .tag-ecom { background: rgba(67,232,180,.12); color: var(--accent3); border: 1px solid rgba(67,232,180,.2); }
+  .tag-landing { background: rgba(6,182,212,.12); color: var(--accent2); border: 1px solid rgba(6,182,212,.2); }
   .portfolio-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; letter-spacing: -.3px; }
   .portfolio-info p { font-size: 13px; color: var(--muted); }
 
   /* PRICING */
-  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .price-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 36px 32px; position: relative; transition: transform .2s; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .price-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; position: relative; transition: transform .2s; }
   .price-card:hover { transform: translateY(-4px); }
-  .price-card.featured { border-color: var(--accent); background: rgba(108,99,255,.05); }
+  .price-card.featured { border-color: var(--accent); background: rgba(249,115,22,.04); }
   .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--grad); color: white; font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 20px; white-space: nowrap; }
-  .price-name { font-size: 14px; font-weight: 600; color: var(--soft); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
-  .price-amount { font-size: 38px; font-weight: 900; letter-spacing: -2px; margin-bottom: 4px; }
-  .price-period { font-size: 13px; color: var(--muted); margin-bottom: 28px; }
-  .price-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-  .price-features li { font-size: 14px; color: var(--soft); display: flex; align-items: flex-start; gap: 10px; }
-  .check { color: var(--accent3); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
-  .price-btn { display: block; text-align: center; text-decoration: none; padding: 14px; border-radius: 12px; font-weight: 700; font-size: 14px; transition: all .2s; }
+  .price-name { font-size: 13px; font-weight: 600; color: var(--soft); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
+  .price-amount { font-size: 36px; font-weight: 900; letter-spacing: -2px; margin-bottom: 4px; }
+  .price-period { font-size: 13px; color: var(--muted); margin-bottom: 24px; }
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 11px; margin-bottom: 28px; }
+  .price-features li { font-size: 13px; color: var(--soft); display: flex; align-items: flex-start; gap: 9px; }
+  .check { color: var(--accent3); font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+  .price-btn { display: block; text-align: center; text-decoration: none; padding: 13px; border-radius: 12px; font-weight: 700; font-size: 14px; transition: all .2s; }
   .price-btn-ghost { border: 1px solid var(--border); color: var(--text); }
   .price-btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
   .price-btn-filled { background: var(--grad); color: white; }
   .price-btn-filled:hover { opacity: .85; }
 
   /* STUDENT PRICING */
-  .student-pricing {
-    margin-top: 28px;
-    background: rgba(67,232,180,.04);
-    border: 1px solid rgba(67,232,180,.2);
-    border-radius: 20px;
-    padding: 32px;
-  }
-
-  .student-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent3);
-    margin-bottom: 20px;
-  }
-
-  .student-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent3);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .student-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 32px;
-  }
-
-  .student-info h3 {
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -.4px;
-    margin-bottom: 8px;
-  }
-
-  .student-info p {
-    font-size: 14px;
-    color: var(--muted);
-    max-width: 480px;
-    line-height: 1.65;
-    margin-bottom: 16px;
-  }
-
-  .student-feats {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 24px;
-  }
-
-  .student-feats li {
-    font-size: 13px;
-    color: var(--soft);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
+  .student-pricing { margin-top: 24px; background: rgba(67,232,180,.04); border: 1px solid rgba(67,232,180,.2); border-radius: 20px; padding: 32px; }
+  .student-label { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent3); margin-bottom: 20px; }
+  .student-dot { width: 6px; height: 6px; background: var(--accent3); border-radius: 50%; flex-shrink: 0; }
+  .student-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; }
+  .student-info h3 { font-size: 20px; font-weight: 700; letter-spacing: -.4px; margin-bottom: 8px; }
+  .student-info p { font-size: 14px; color: var(--muted); max-width: 480px; line-height: 1.65; margin-bottom: 16px; }
+  .student-feats { list-style: none; display: flex; flex-wrap: wrap; gap: 8px 24px; }
+  .student-feats li { font-size: 13px; color: var(--soft); display: flex; align-items: center; gap: 6px; }
   .student-cta { flex-shrink: 0; text-align: center; }
-
-  .student-price-num {
-    font-size: 38px;
-    font-weight: 900;
-    letter-spacing: -2px;
-    color: var(--accent3);
-    margin-bottom: 4px;
-  }
-
-  .student-price-note {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 20px;
-    max-width: 160px;
-    line-height: 1.5;
-  }
-
-  .btn-student {
-    display: block;
-    text-decoration: none;
-    padding: 13px 28px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 14px;
-    border: 1px solid var(--accent3);
-    color: var(--accent3);
-    white-space: nowrap;
-    transition: background .2s;
-  }
-
+  .student-price-num { font-size: 36px; font-weight: 900; letter-spacing: -2px; color: var(--accent3); margin-bottom: 4px; }
+  .student-price-note { font-size: 12px; color: var(--muted); margin-bottom: 20px; max-width: 160px; line-height: 1.5; }
+  .btn-student { display: block; text-decoration: none; padding: 13px 28px; border-radius: 12px; font-weight: 700; font-size: 14px; border: 1px solid var(--accent3); color: var(--accent3); white-space: nowrap; transition: background .2s; }
   .btn-student:hover { background: rgba(67,232,180,.08); }
 
   /* FAQ */
   .faq-list { display: flex; flex-direction: column; gap: 2px; }
   .faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color .2s; }
-  .faq-item.open { border-color: #2e2e40; }
-  .faq-q { font-size: 16px; font-weight: 700; letter-spacing: -.3px; padding: 24px 32px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+  .faq-item.open { border-color: #2e2e3a; }
+  .faq-q { font-size: 16px; font-weight: 700; letter-spacing: -.3px; padding: 22px 28px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
   .faq-q:hover { color: var(--accent); }
   .faq-icon { flex-shrink: 0; width: 20px; height: 20px; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--muted); transition: transform .3s, border-color .2s; }
   .faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--accent); color: var(--accent); }
   .faq-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }
   .faq-item.open .faq-body { grid-template-rows: 1fr; }
   .faq-body-inner { overflow: hidden; }
-  .faq-a { font-size: 14px; color: var(--muted); line-height: 1.75; padding: 0 32px 24px; }
-
-  /* TESTIMONIALS */
-  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  .testi-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 28px; }
-  .stars { color: #fbbf24; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
-  .testi-text { font-size: 14px; color: var(--soft); line-height: 1.75; margin-bottom: 20px; font-style: italic; }
-  .testi-author { display: flex; align-items: center; gap: 12px; }
-  .avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: white; flex-shrink: 0; }
-  .av-1 { background: linear-gradient(135deg, #6c63ff, #ff6584); }
-  .av-2 { background: linear-gradient(135deg, #43e8b4, #6c63ff); }
-  .av-3 { background: linear-gradient(135deg, #ff6584, #fbbf24); }
-  .author-name { font-size: 14px; font-weight: 600; }
-  .author-role { font-size: 12px; color: var(--muted); }
+  .faq-a { font-size: 14px; color: var(--muted); line-height: 1.75; padding: 0 28px 22px; }
 
   /* CTA */
   .cta { margin: 0 60px 100px; background: var(--surface); border: 1px solid var(--border); border-radius: 28px; padding: 80px 60px; text-align: center; position: relative; overflow: hidden; }
-  .cta-blob { position: absolute; width: 400px; height: 400px; border-radius: 50%; filter: blur(100px); opacity: .08; }
+  .cta-blob { position: absolute; width: 400px; height: 400px; border-radius: 50%; filter: blur(100px); opacity: .07; }
   .cta-blob-1 { background: var(--accent); top: -150px; left: -100px; }
   .cta-blob-2 { background: var(--accent2); bottom: -150px; right: -100px; }
-  .cta h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 900; letter-spacing: -2px; margin-bottom: 16px; position: relative; }
-  .cta p { font-size: 16px; color: var(--soft); margin-bottom: 40px; position: relative; }
+  .cta h2 { font-size: clamp(26px, 4vw, 46px); font-weight: 900; letter-spacing: -2px; margin-bottom: 12px; position: relative; }
+  .cta-sub { font-size: 16px; color: var(--soft); margin-bottom: 8px; position: relative; }
+  .cta-urgency { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 36px; position: relative; }
   .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
 
+  /* WA FAB */
+  .wa-fab { position: fixed; bottom: 20px; right: 16px; background: #25d366; color: #fff; border-radius: 50px; padding: 12px 18px 12px 14px; display: flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 20px rgba(37,211,102,.45); z-index: 998; transition: transform .2s, box-shadow .2s; }
+  .wa-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,211,102,.6); }
+  .wa-fab svg { flex-shrink: 0; }
+
   /* FOOTER */
-  footer { border-top: 1px solid var(--border); padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; }
+  footer { border-top: 1px solid var(--border); padding: 36px 60px; display: flex; justify-content: space-between; align-items: center; }
   .footer-logo { font-weight: 800; font-size: 16px; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .footer-text { font-size: 13px; color: var(--muted); }
   .footer-links { display: flex; gap: 24px; }
   .footer-links a { color: var(--muted); text-decoration: none; font-size: 13px; transition: color .2s; }
   .footer-links a:hover { color: var(--text); }
 
+  /* MOBILE */
   @media (max-width: 768px) {
-    /* NAV */
     nav { padding: 14px 20px; }
     .nav-links a:not(.nav-cta) { display: none; }
     .nav-links { gap: 0; }
     .nav-cta { padding: 8px 16px; font-size: 12px; }
 
-    /* HERO */
     .hero { padding: 48px 20px 40px; min-height: auto; }
-    .hero-badge { font-size: 11px; padding: 5px 12px; margin-bottom: 20px; }
-    .hero p { font-size: 15px; margin-bottom: 28px; }
+    .hero-sub { font-size: 15px; }
     .hero-btns { flex-direction: column; gap: 10px; }
-    .btn-primary, .btn-ghost { padding: 13px 24px; font-size: 14px; text-align: center; }
+    .btn-wa, .btn-ghost { padding: 13px 24px; font-size: 14px; text-align: center; justify-content: center; }
 
-    /* STATS */
     .stats { flex-direction: column; }
-    .stat { padding: 20px 20px; border-right: none; border-bottom: 1px solid var(--border); }
+    .stat { padding: 20px; border-right: none; border-bottom: 1px solid var(--border); }
     .stat-num { font-size: 32px; }
 
-    /* SECTION */
-    .section { padding: 48px 20px; }
-    .section-title { margin-bottom: 10px; }
+    .section { padding: 52px 20px; }
     .section-sub { font-size: 14px; margin-bottom: 36px; }
 
-    /* SERVICES */
     .services-grid { grid-template-columns: 1fr; gap: 10px; }
-    .service-card { padding: 24px; }
+    .service-card { padding: 22px; }
 
-    /* PROCESS */
     .process-grid { grid-template-columns: 1fr; gap: 10px; }
     .process-step { padding: 24px; }
-    .step-num { font-size: 36px; margin-bottom: 10px; }
-    .process-step h3 { font-size: 17px; }
-    .process-step p { font-size: 13px; }
+    .step-num { font-size: 36px; }
 
-    /* PRICING */
+    .portfolio-grid { grid-template-columns: 1fr; }
+
     .pricing-grid { grid-template-columns: 1fr; gap: 12px; }
-    .price-card { padding: 28px 24px; }
-    .price-amount { font-size: 32px; }
+    .price-card { padding: 26px 22px; }
+    .price-amount { font-size: 30px; }
 
-    /* STUDENT PRICING */
     .student-pricing { padding: 24px 20px; }
     .student-inner { flex-direction: column; gap: 20px; }
     .student-cta { width: 100%; }
     .student-price-note { max-width: 100%; }
     .btn-student { text-align: center; }
 
-    /* FAQ */
     .faq-q { font-size: 14px; padding: 18px 20px; }
     .faq-a { font-size: 13px; padding: 0 20px 18px; }
 
-    /* CTA */
     .cta { margin: 0 16px 60px; padding: 40px 20px; border-radius: 20px; }
     .cta h2 { letter-spacing: -1px; }
-    .cta p { font-size: 14px; margin-bottom: 28px; }
+    .cta-sub { font-size: 14px; }
     .cta-btns { flex-direction: column; align-items: center; }
 
-    /* FOOTER */
-    footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 20px; }
+    footer { flex-direction: column; gap: 14px; text-align: center; padding: 28px 20px; }
     .footer-links { gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+    .wa-fab span { display: none; }
+    .wa-fab { padding: 14px; border-radius: 50%; }
   }
 
   @media (max-width: 400px) {
     .hero { padding: 36px 16px 32px; }
     .section { padding: 40px 16px; }
-    .service-card { padding: 20px; }
-    .process-step { padding: 20px; }
-    .price-card { padding: 24px 20px; }
-    .faq-q { font-size: 13px; padding: 16px 16px; }
-    .faq-a { padding: 0 16px 16px; }
     .cta { margin: 0 12px 48px; padding: 32px 16px; }
   }
 </style>
@@ -426,9 +320,8 @@
   <div class="nav-logo">Kagenoire</div>
   <div class="nav-links">
     <a href="#layanan">Layanan</a>
-    <a href="#proses">Cara Kerja</a>
     <a href="#harga">Harga</a>
-    <a href="#kontak" class="nav-cta">Mulai Proyek</a>
+    <a href="#kontak" class="nav-cta">Chat WA</a>
   </div>
 </nav>
 
@@ -440,13 +333,21 @@
   <div class="hero-content">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      Tersedia untuk proyek baru
+      Tersedia untuk proyek baru · Respons dalam 1 jam
     </div>
-    <h1>Kami buat website yang <span class="grad">benar-benar bekerja</span> untuk bisnis Anda</h1>
-    <p>Dari landing page hingga web app kompleks. Desain modern, performa tinggi, dan siap pakai dalam hitungan hari.</p>
+    <h1>Website profesional<br>dalam 3 hari,<br><span class="grad">mulai Rp 500rb</span></h1>
+    <p class="hero-sub">Landing page, toko online, hingga web app. Desain kustom, fast loading, dan source code diserahkan penuh.</p>
+    <div class="hero-proof">
+      <div class="hero-proof-item"><span class="dot"></span> 40+ proyek selesai</div>
+      <div class="hero-proof-item"><span class="dot"></span> Revisi sampai puas</div>
+      <div class="hero-proof-item"><span class="dot"></span> Tidak ada biaya tersembunyi</div>
+    </div>
     <div class="hero-btns">
-      <a href="#harga" class="btn-primary">Lihat Paket Harga</a>
-      <a href="#proses" class="btn-ghost">Cara Kerja</a>
+      <a href="https://wa.me/6289519950372?text=Halo+Kagenoire,+saya+mau+konsultasi+soal+website" class="btn-wa" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.345.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        Chat WA Sekarang
+      </a>
+      <a href="#harga" class="btn-ghost">Lihat Paket Harga</a>
     </div>
   </div>
 </section>
@@ -454,55 +355,49 @@
 <div class="stats">
   <div class="stat">
     <div class="stat-num">40+</div>
-    <div class="stat-label">Project selesai</div>
+    <div class="stat-label">Proyek selesai</div>
   </div>
   <div class="stat">
     <div class="stat-num">98%</div>
-    <div class="stat-label">Klien puas & repeat order</div>
+    <div class="stat-label">Klien puas dan repeat order</div>
   </div>
   <div class="stat">
     <div class="stat-num">3 hari</div>
     <div class="stat-label">Rata-rata waktu pengerjaan</div>
   </div>
   <div class="stat">
-    <div class="stat-num">24 jam</div>
-    <div class="stat-label">Waktu respons</div>
+    <div class="stat-num">1 jam</div>
+    <div class="stat-label">Waktu respons WA</div>
   </div>
 </div>
 
 <section class="section" id="layanan">
   <div class="section-tag">Layanan</div>
   <h2 class="section-title">Apa yang kami kerjakan</h2>
-  <p class="section-sub">Solusi digital lengkap untuk UMKM, startup, dan bisnis yang ingin tampil profesional online.</p>
+  <p class="section-sub">Solusi digital untuk UMKM, startup, dan bisnis yang ingin tampil profesional online.</p>
 
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon icon-purple">WEB</div>
       <h3>Landing Page</h3>
       <p>Halaman promosi yang menarik dan cepat. Cocok untuk produk, event, atau kampanye marketing yang butuh konversi tinggi.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-green">SHOP</div>
       <h3>Website Toko Online</h3>
       <p>Platform jualan online lengkap dengan katalog produk, keranjang, dan manajemen order. Siap terima pembeli hari ini.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-pink">CORP</div>
       <h3>Website Perusahaan</h3>
       <p>Profil bisnis profesional yang membangun kepercayaan klien. Lengkap dengan halaman layanan, tim, dan portofolio.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-orange">APP</div>
       <h3>Web App & Dashboard</h3>
       <p>Aplikasi web interaktif: sistem absensi, dashboard laporan, manajemen inventori, dan aplikasi internal bisnis.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-blue">BOT</div>
       <h3>Bot & Otomasi</h3>
       <p>Otomasi proses bisnis via WhatsApp bot, notifikasi otomatis, dan integrasi antar sistem untuk hemat waktu operasional.</p>
     </div>
     <div class="service-card">
-      <div class="service-icon icon-red">FIX</div>
       <h3>Maintenance & Revisi</h3>
       <p>Update konten, perbaikan bug, penambahan fitur, dan perawatan rutin website yang sudah ada agar tetap berjalan optimal.</p>
     </div>
@@ -515,16 +410,15 @@
   <p class="section-sub">Proses yang simpel dan transparan, tanpa bikin Anda pusing.</p>
 
   <div class="process-grid">
-
     <div class="process-step">
       <div class="step-num">01</div>
       <h3>Konsultasi</h3>
-      <p>Ceritakan kebutuhan Anda via email atau chat. Tidak ada biaya konsultasi, tidak ada komitmen. Saya pelajari bisnis Anda sebelum mulai apa pun.</p>
+      <p>Chat via WhatsApp, ceritakan kebutuhan Anda. Tidak ada biaya konsultasi, tidak ada komitmen. Saya pelajari bisnis Anda sebelum mulai apa pun.</p>
     </div>
     <div class="process-step">
       <div class="step-num">02</div>
       <h3>Persetujuan & Brief</h3>
-      <p>Kita sepakati scope pekerjaan, estimasi waktu, dan harga sebelum mulai. Tidak ada biaya tersembunyi, tidak ada perubahan harga di tengah jalan.</p>
+      <p>Kita sepakati scope, estimasi waktu, dan harga sebelum mulai. Tidak ada biaya tersembunyi, tidak ada perubahan harga di tengah jalan.</p>
     </div>
     <div class="process-step">
       <div class="step-num">03</div>
@@ -534,7 +428,124 @@
     <div class="process-step">
       <div class="step-num">04</div>
       <h3>Serah Terima</h3>
-      <p>Website jadi, source code diserahkan, dan saya bantu proses upload ke hosting. Selesai bukan berarti putus kontak, pertanyaan setelah project tetap dilayani.</p>
+      <p>Website jadi, source code diserahkan, dan saya bantu upload ke hosting. Pertanyaan setelah proyek selesai tetap dilayani.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-tag">Portofolio</div>
+  <h2 class="section-title">Contoh hasil kerja</h2>
+  <p class="section-sub">Setiap website dikerjakan dengan desain kustom sesuai identitas bisnis klien.</p>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup mock-resto">
+        <div class="m-nav">
+          <div class="m-logo">DAPUR NUSANTARA</div>
+          <div class="m-links"><span>Menu</span><span>Reservasi</span><span>Lokasi</span></div>
+        </div>
+        <div class="m-hero">
+          <div class="m-tag">Restoran Tradisional</div>
+          <div class="m-h1">Cita Rasa <span>Nusantara</span><br>yang Otentik</div>
+          <div class="m-sub">Nikmati 50+ menu masakan khas Indonesia<br>dengan bahan-bahan pilihan segar setiap hari</div>
+          <div class="m-btn">Pesan Sekarang</div>
+        </div>
+        <div class="m-cards">
+          <div class="m-card"><div class="m-card-img"></div><div class="m-card-title">Rendang Padang</div><div class="m-card-price">Rp 45.000</div></div>
+          <div class="m-card"><div class="m-card-img"></div><div class="m-card-title">Soto Ayam</div><div class="m-card-price">Rp 28.000</div></div>
+          <div class="m-card"><div class="m-card-img"></div><div class="m-card-title">Nasi Gudeg</div><div class="m-card-price">Rp 32.000</div></div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag tag-landing">Landing Page</span>
+        <h3>Dapur Nusantara</h3>
+        <p>Website restoran dengan menu digital, galeri makanan, dan sistem reservasi online.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup mock-shop">
+        <div class="m-nav">
+          <div class="m-logo">Batik Hartono</div>
+          <div class="m-links"><span>Koleksi</span><span>Tentang</span><span>Kontak</span></div>
+        </div>
+        <div class="m-banner">
+          <div class="m-banner-tag">Koleksi Terbaru</div>
+          <div class="m-banner-h">Batik Premium<br>Khas Jogja</div>
+          <div class="m-banner-sub">Dibuat tangan oleh pengrajin berpengalaman</div>
+          <div class="m-banner-btn">Lihat Koleksi</div>
+        </div>
+        <div class="m-grid">
+          <div class="m-item"><div class="m-item-img c1"></div><div class="m-item-info"><div class="m-item-name">Batik Parang</div><div class="m-item-price">Rp 250rb</div></div></div>
+          <div class="m-item"><div class="m-item-img c2"></div><div class="m-item-info"><div class="m-item-name">Batik Kawung</div><div class="m-item-price">Rp 310rb</div></div></div>
+          <div class="m-item"><div class="m-item-img c3"></div><div class="m-item-info"><div class="m-item-name">Batik Mega</div><div class="m-item-price">Rp 280rb</div></div></div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag tag-ecom">Toko Online</span>
+        <h3>Batik Hartono</h3>
+        <p>Platform e-commerce batik dengan katalog produk, filter koleksi, dan integrasi WhatsApp order.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup mock-klinik">
+        <div class="m-nav">
+          <div class="m-logo">Klinik Sehat Prima</div>
+          <div class="m-nav-btn">Daftar Online</div>
+        </div>
+        <div class="m-hero">
+          <div class="m-hero-left">
+            <div class="m-hero-tag">Klinik Umum & Gigi</div>
+            <div class="m-hero-h">Layanan Kesehatan<br>Terpercaya</div>
+            <div class="m-hero-sub">Dokter berpengalaman, fasilitas lengkap,<br>dan pelayanan ramah untuk keluarga Anda</div>
+            <div class="m-hero-btn">Buat Janji</div>
+          </div>
+          <div class="m-form">
+            <div class="m-form-title">Daftar Online</div>
+            <div class="m-field"></div>
+            <div class="m-field"></div>
+            <div class="m-field"></div>
+            <div class="m-form-btn"></div>
+          </div>
+        </div>
+        <div class="m-stats">
+          <div class="m-stat"><div class="m-stat-num">12+</div><div class="m-stat-label">Dokter</div></div>
+          <div class="m-stat"><div class="m-stat-num">5rb+</div><div class="m-stat-label">Pasien</div></div>
+          <div class="m-stat"><div class="m-stat-num">10th</div><div class="m-stat-label">Berdiri</div></div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag tag-web">Website Bisnis</span>
+        <h3>Klinik Sehat Prima</h3>
+        <p>Website klinik profesional dengan sistem pendaftaran online dan informasi dokter lengkap.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup mock-edu">
+        <div class="m-nav">
+          <div class="m-logo">Edu<span>Path</span></div>
+          <div class="m-nav-btn">Mulai Belajar</div>
+        </div>
+        <div class="m-hero">
+          <div class="m-badge">Platform Belajar Online</div>
+          <div class="m-h">Kuasai Skill Digital<br><span>Masa Depan</span></div>
+          <div class="m-sub">100+ kursus dari instruktur berpengalaman</div>
+        </div>
+        <div class="m-courses">
+          <div class="m-course"><div class="m-course-top e1"></div><div class="m-course-body"><div class="m-course-title">Web Development</div><div class="m-course-meta">24 modul - Pemula</div></div></div>
+          <div class="m-course"><div class="m-course-top e2"></div><div class="m-course-body"><div class="m-course-title">Data Analytics</div><div class="m-course-meta">18 modul - Menengah</div></div></div>
+          <div class="m-course"><div class="m-course-top e3"></div><div class="m-course-body"><div class="m-course-title">UI/UX Design</div><div class="m-course-meta">20 modul - Semua level</div></div></div>
+        </div>
+      </div>
+      <div class="portfolio-info">
+        <span class="portfolio-tag tag-landing">Web App</span>
+        <h3>EduPath Academy</h3>
+        <p>Platform edukasi online dengan sistem kursus, progress tracking, dan manajemen konten.</p>
+      </div>
     </div>
 
   </div>
@@ -542,8 +553,8 @@
 
 <section class="section" id="harga">
   <div class="section-tag">Harga</div>
-  <h2 class="section-title">Paket yang transparan</h2>
-  <p class="section-sub">Tidak ada biaya tersembunyi. Pilih paket yang sesuai kebutuhan, atau hubungi kami untuk harga kustom.</p>
+  <h2 class="section-title">Transparan, tidak ada biaya tersembunyi</h2>
+  <p class="section-sub">Pilih paket yang sesuai kebutuhan, atau hubungi kami untuk penawaran kustom.</p>
 
   <div class="pricing-grid">
     <div class="price-card">
@@ -557,7 +568,7 @@
         <li><span class="check">✓</span> Revisi 2x</li>
         <li><span class="check">✓</span> Selesai 2-3 hari kerja</li>
       </ul>
-      <a href="#kontak" class="price-btn price-btn-ghost">Pesan Sekarang</a>
+      <a href="https://wa.me/6289519950372?text=Halo,+saya+mau+pesan+paket+Starter" class="price-btn price-btn-ghost" target="_blank">Pesan via WA</a>
     </div>
 
     <div class="price-card featured">
@@ -574,7 +585,7 @@
         <li><span class="check">✓</span> Selesai 3-5 hari kerja</li>
         <li><span class="check">✓</span> Source code diserahkan</li>
       </ul>
-      <a href="#kontak" class="price-btn price-btn-filled">Pesan Sekarang</a>
+      <a href="https://wa.me/6289519950372?text=Halo,+saya+mau+pesan+paket+Professional" class="price-btn price-btn-filled" target="_blank">Pesan via WA</a>
     </div>
 
     <div class="price-card">
@@ -589,7 +600,7 @@
         <li><span class="check">✓</span> Dashboard admin</li>
         <li><span class="check">✓</span> Garansi bug 14 hari</li>
       </ul>
-      <a href="#kontak" class="price-btn price-btn-ghost">Konsultasi Dulu</a>
+      <a href="https://wa.me/6289519950372?text=Halo,+saya+mau+konsultasi+paket+Business" class="price-btn price-btn-ghost" target="_blank">Konsultasi Dulu</a>
     </div>
   </div>
 
@@ -610,7 +621,7 @@
       <div class="student-cta">
         <div class="student-price-num">Rp 200rb</div>
         <div class="student-price-note">Tunjukkan KTM aktif saat order</div>
-        <a href="#kontak" class="btn-student">Pesan Sekarang</a>
+        <a href="https://wa.me/6289519950372?text=Halo,+saya+mahasiswa+mau+pesan+paket+khusus+mahasiswa" class="btn-student" target="_blank">Pesan Sekarang</a>
       </div>
     </div>
   </div>
@@ -619,7 +630,7 @@
 <section class="section">
   <div class="section-tag">FAQ</div>
   <h2 class="section-title">Pertanyaan yang sering ditanya</h2>
-  <p class="section-sub">Kalau ada yang belum terjawab, langsung tanya via email.</p>
+  <p class="section-sub">Kalau ada yang belum terjawab, langsung tanya via WhatsApp.</p>
 
   <div class="faq-list">
     <div class="faq-item">
@@ -643,8 +654,8 @@
       <div class="faq-body"><div class="faq-body-inner"><div class="faq-a">Pembayaran melalui platform Fastwork. 50% di awal sebelum pengerjaan, 50% setelah selesai dan disetujui. Uang aman karena ditahan platform sampai Anda konfirmasi puas.</div></div></div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Bisa minta desain sesuai referensi? <span class="faq-icon">+</span></div>
-      <div class="faq-body"><div class="faq-body-inner"><div class="faq-a">Bisa. Kirim referensi website atau desain yang Anda suka saat konsultasi. Semakin jelas referensi, semakin dekat hasilnya dengan ekspektasi Anda.</div></div></div>
+      <div class="faq-q">Bisa konsultasi dulu sebelum bayar? <span class="faq-icon">+</span></div>
+      <div class="faq-body"><div class="faq-body-inner"><div class="faq-a">Bisa. Chat via WhatsApp kapan saja, konsultasi gratis tanpa komitmen. Saya akan bantu tentukan paket dan estimasi harga yang paling sesuai kebutuhan Anda.</div></div></div>
     </div>
   </div>
 </section>
@@ -653,15 +664,25 @@
   <div class="cta-blob cta-blob-1"></div>
   <div class="cta-blob cta-blob-2"></div>
   <h2>Siap mulai proyek Anda?</h2>
-  <p>Konsultasi gratis, tanpa komitmen. Ceritakan kebutuhan Anda dan kami siapkan solusinya.</p>
+  <p class="cta-sub">Konsultasi gratis, tanpa komitmen. Ceritakan kebutuhan Anda dan kami siapkan solusinya.</p>
+  <p class="cta-urgency">Respons dalam 1 jam di jam kerja</p>
   <div class="cta-btns">
-    <a href="mailto:Kagenoire404@gmail.com" class="btn-primary">Kirim Email</a>
+    <a href="https://wa.me/6289519950372?text=Halo+Kagenoire,+saya+mau+konsultasi+soal+website" class="btn-wa" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.345.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      Chat WA Sekarang
+    </a>
+    <a href="mailto:Kagenoire404@gmail.com" class="btn-ghost">Kirim Email</a>
   </div>
 </div>
 
+<a href="https://wa.me/6289519950372?text=Halo+Kagenoire,+saya+mau+konsultasi+soal+website" class="wa-fab" target="_blank" rel="noopener">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.867-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.345.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>Chat WA</span>
+</a>
+
 <footer>
   <div class="footer-logo">Kagenoire</div>
-  <div class="footer-text">© 2026 Kagenoire. Semua hak dilindungi.</div>
+  <div class="footer-text">2026 Kagenoire. Semua hak dilindungi.</div>
   <div class="footer-links">
     <a href="#layanan">Layanan</a>
     <a href="#proses">Cara Kerja</a>
